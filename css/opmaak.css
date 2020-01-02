@@ -1,0 +1,287 @@
+/* CSS bij : Het Bedrijf */
+
+@import "reset.css";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css";
+
+/* Algemene stijlen --------------------------------- */
+
+body {
+    font: 400 100%/1.5 "Open Sans", Arial, sans-serif; 
+    color: #666;
+    background: white;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+strong { font-weight: 700; }
+
+/* Header stijlen --------------------------------- */
+
+header#mainheader { padding: 5em 0 1em 2em; }
+
+/* Navigatie stijlen --------------------------------- */
+
+a {
+    color: #74C53A;
+    text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+nav#mainnav {
+    background: #999;
+    min-height: 200px;
+}
+
+body.home nav#mainnav ul { background: black url(../images/corporate-image.jpg) no-repeat right center/900px; }
+body.contact nav#mainnav ul { background: black url(../images/contact.jpg) no-repeat right center/900px; }
+
+nav#mainnav ul li {
+    width: 300px;
+    background: #666;
+    border-bottom: 1px solid #333;
+}
+
+nav#mainnav ul li:last-of-type { border: 0; }
+
+nav#mainnav a {
+    display: block;
+    color: #F1F1F1;
+    padding: 1em 2em;
+    transition: all 500ms;
+    background: rgb(153,153,153);
+    background: linear-gradient(180deg, rgb(153,153,153) 0%, rgb(102,102,102) 100%);
+}
+
+nav#mainnav a:hover,
+nav#mainnav a.actiefitem {
+    text-decoration: none;
+    background: rgb(116, 197, 58);
+    background: linear-gradient(180deg, rgb(116, 197, 58) 0%, rgb(0, 128, 0) 100%);
+}
+
+nav#mainnav a:hover::before,
+nav#mainnav a.actiefitem::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\F35A";
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+nav#mainnav a.actiefitem { cursor: default; }
+
+/* Meta navigatie stijlen --------------------------------- */
+
+nav#metanav {
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav#metanav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+}
+
+nav#metanav a {
+    display: inline-block;
+    padding: .5em 1em;
+    transition: all 500ms;
+}
+
+nav#metanav a:hover,
+nav#metanav a.actiefitem {
+    background: #999;
+    color: #333;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+nav#metanav a.actiefitem { cursor: default; }
+
+/* Content stijlen --------------------------------- */
+
+main { display: flex; }
+
+main aside {
+    background: #EEE;
+    min-height: 300px;
+    flex-basis: 300px;
+    padding: 2em;
+}
+
+main section { 
+    background: white;
+    min-height: 300px;
+    flex-basis: 900px;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+main aside span { display: block; }
+
+span.datum { font-weight: 700; }
+
+.leesmeer { text-align: right; }
+
+.leesmeer a {
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.leesmeer a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\F35A";
+    display: inline-block;
+    padding-right: 4px;
+}
+
+ul.nieuws li {
+    border-bottom: 1px dotted #999;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+ul.nieuws li:last-child { 
+    border: 0; 
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#mainsection { padding: 4em 2em; }
+
+#mainsection article img { 
+    width: 250px; 
+    float: left;
+    margin-right: 2em;
+}
+
+#mainsection article + article { margin-top: 4em; }
+    
+
+/* Footer stijlen --------------------------------- */
+
+footer#mainfooter {
+    min-height: 200px;
+    background: #666;
+    color: #CCC;
+    padding: 2em;
+}
+
+/* Contact aside stijlen --------------------------------- */
+
+figure.gebouw {
+    /* Parent-element van figcaption position geven */
+    position: relative;
+    
+    /* Figcaption buiten beeld zetten */
+    overflow: hidden;
+    
+    margin-bottom: 2em;
+}
+
+figure.gebouw img { width: 100%; }
+
+figure.gebouw figcaption {
+    /* Figcaption op image leggen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Overlay maken */
+    background: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-shadow: 2px 3px 3px #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+    /* Tekst centreren in figcaption */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Figcaption verkleinen */
+    transform: scale(.01);
+    
+    /* Animatie */
+    transition: all 500ms ease-out;
+}
+
+figure.gebouw:hover figcaption {
+    /* Figcaption vergroten */
+    transform: scale(1);
+}
+
+.kolomhouder { 
+    display: flex; 
+    justify-content: space-between;
+}
+
+
+/* Contact formulier stijlen --------------------------------- */
+
+form#contactform { width: 48%; }
+
+form#contactform label {
+    display: block;
+    margin: 6px 0;
+}
+
+/* Attribute-selectors */
+form#contactform input[type=text],
+form#contactform input[type=email],
+form#contactform textarea {
+    width: 100%;
+    padding: 1em;
+    font: 400 100%/1.5 "Open Sans", Arial, sans-serif;
+    color: #666;
+    background: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+}
+
+form#contactform textarea { min-height: 250px; }
+
+form#contactform input[type=submit] {
+    background: rgb(116, 197, 58);
+    background: linear-gradient(180deg, rgb(116, 197, 58) 0%, rgb(0, 128, 0) 100%);
+    font: 700 100%/1.5 "Open Sans", Arial, sans-serif;
+    padding: .5em 2em;
+    margin-top: 1em;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+}
+
+form#contactform input[type=text]:focus,
+form#contactform input[type=email]:focus,
+form#contactform textarea:focus { 
+    background: rgb(204,222,249);
+}
+
+
+/* Contact tabel stijlen --------------------------------- */
+
+table#openingsuren { width: 48%; }
+
+
+
